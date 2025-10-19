@@ -269,32 +269,3 @@ footer { text-align:center; background:#000; color:#fff; padding:20px 0; }
   }
 }
 /* End of media queries */
-
-/* ✅ Navbar fix for mobile view */
-@media (max-width: 768px) {
-  .navbar {
-    flex-wrap: wrap; /* content niche wrap ho jaye */
-    padding: 10px 20px;
-  }
-
-  .navbar .logo {
-    width: 100%;
-    justify-content: center;
-    margin-bottom: 10px;
-  }
-
-  .navbar nav {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .navbar nav a {
-    font-size: 14px;
-  }
-}
-
-
-/* Menu icon for mobile */
