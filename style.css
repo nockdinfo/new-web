@@ -295,3 +295,35 @@ footer { text-align:center; background:#000; color:#fff; padding:20px 0; }
     font-size: 14px;
   }
 }
+
+
+/* Menu icon for mobile */
+/* ✅ Hide menu icon on desktop */
+.menu-icon {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ Mobile menu behavior */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
