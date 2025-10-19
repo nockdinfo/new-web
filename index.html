@@ -1,73 +1,106 @@
-<!-- FILE: index.html -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NockD – Style In Motion</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-
-
-  <!-- HEADER button -->
-
-
-  <header class="navbar">
-    <div class="logo">
-      <img src="adil.jpg" alt="NockD Logo">
-      <span>ꜱᴛʏʟᴇ ɪɴ ᴍᴏᴛɪᴏɴ</span>
-    </div>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="men.html">Men</a>
-      <a href="women.html">Women</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
-
-<!-- HERO BANNER -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Discover Your Style</h1>
-    <p>Explore premium streetwear for Men & Women.</p>
-    <div class="hero-buttons">
-      <a href="men.html" class="btn">Men Collection</a> <!-- men collection add html-->
-      <a href="women.html" class="btn">Women Collection</a>   <!-- women collection add html-->
-    </div>
+<!-- ✅ Responsive Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <img src="image/logo.png" alt="NockD Logo">
+    <h1>STYLE IN MOTION</h1>
   </div>
-</section>
 
+  <nav class="nav-links" id="navLinks">
+    <a href="#">Home</a>
+    <a href="#">Men</a>
+    <a href="#">Women</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
 
-  <!-- FEATURED COLLECTIONS -->
+  <!-- Hamburger Icon -->
+  <div class="menu-icon" id="menuIcon">☰</div>
+</header>
 
-<section class="collections">
-  <h2>Our Collections</h2>
-  <div class="collection-grid">
+<style>
+/* Navbar Base */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 15px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
 
+.logo {
+  display: flex;
+  align-items: center;
+}
 
-    <!-- MEN COLLECTION -->
+.logo img {
+  width: 70px;
+  margin-right: 10px;
+}
 
-    <a href="men.html" class="collection-card">
-      <img src="danish1.jpg" alt="Men Collection">
-      <h3>Men Collection</h3>
-    </a>
+.logo h1 {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
 
-    <!-- WOMEN COLLECTION -->
-     
-    <a href="women.html" class="collection-card">
-      <img src="hania3.jpg" alt="Women Collection">
-      <h3>Women Collection</h3>
-    </a>
-  </div>
-</section>
+/* Links */
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
 
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 NockD – Style In Motion</p>
-  </footer>
-</body>
-</html>
+.nav-links a:hover {
+  color: #1e90ff;
+}
+
+/* Hamburger Icon Hidden in Desktop */
+.menu-icon {
+  display: none;
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* ✅ Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #111;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+}
+</style>
+
+<script>
+// Toggle menu in mobile
+const menuIcon = document.getElementById('menuIcon');
+const navLinks = document.getElementById('navLinks');
+
+menuIcon.onclick = () => {
+  navLinks.classList.toggle('active');
+};
+</script>
