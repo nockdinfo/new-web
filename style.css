@@ -5,6 +5,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  max-width: 100%;
 }
 
 html, body {
@@ -12,7 +13,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* HEADER */
+/* HEADER / NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -63,7 +64,7 @@ html, body {
   text-decoration: underline;
 }
 
-/* HERO */
+/* HERO SECTION */
 .hero {
   background-color: #000;
   color: #fff;
@@ -82,8 +83,17 @@ html, body {
   z-index: 2;
 }
 
+.hero-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
 .hero-buttons {
-  margin-top: 25px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
@@ -199,12 +209,16 @@ footer {
     padding: 8px 20px;
     font-size: 14px;
   }
+
+  .navbar {
+    padding: 15px 20px;
+  }
 }
 
 @media (max-width: 480px) {
   .collection-card {
     width: 100%;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
   }
 
   .hero-content h1 {
@@ -213,5 +227,15 @@ footer {
 
   .hero-content p {
     font-size: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .hero-buttons a.btn {
+    width: 80%;
+    text-align: center;
   }
 }
