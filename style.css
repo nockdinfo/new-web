@@ -47,7 +47,62 @@ body { background:#f8f8f8; color:#111; }
 .btn:hover { background:#005fca; }
 
 /* FOOTER */
-footer { text-align:center; background:#000; color:#fff; padding:20px 0; }
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 40px 20px 40px 20px; /* top & bottom same */
+  font-size: 14px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* thoda kam kiya */
+  justify-content: space-around; /* evenly distribute */
+}
+
+.footer h3 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  line-height: 1.6;
+}
+
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 8px;
+}
+
+.footer ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px; /* thoda zyada space niche */
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+/* Mobile responsive */
+@media(max-width:768px){
+  .footer-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
 
 
 
