@@ -47,32 +47,67 @@ body { background:#f8f8f8; color:#111; }
 .btn:hover { background:#005fca; }
 
 /* FOOTER */
+/* Ensure full page height so footer sticks to bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content takes available space */
+main {
+  flex: 1 0 auto;
+}
+
+/* Footer main styling */
 .footer {
   background: #111;
   color: #fff;
-  padding: 40px 20px 40px 20px; /* top & bottom same */
+  padding: 60px 20px; /* Top & bottom spacing */
   font-size: 14px;
+  flex-shrink: 0; /* Prevent footer from shrinking */
 }
 
+.footer-about p {
+  max-width: 300px; /* ya 350px, text ka width control karne ke liye */
+  line-height: 1.6; /* line spacing */
+  margin: 0;
+  white-space: normal; /* ensure text wraps naturally */
+}
+
+
+/* Footer content container */
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px; /* thoda kam kiya */
-  justify-content: space-around; /* evenly distribute */
+  gap: 40px;
+  justify-content: space-between;
+  max-width: 1200px; /* footer content ka max width */
+  width: 100%;       /* screen ke width ke hisaab se adjust ho */
+  margin: 0 auto;    /* center align */
+  padding: 0 20px;   /* sides me thoda padding */
 }
 
+/* Footer headings font size */
 .footer h3 {
-  font-size: 16px;
-  margin-bottom: 15px;
+  font-size: 20px;       /* size bada kiya */
+  font-weight: 700;      /* thoda bold */
+  margin-bottom: 15px;   /* same spacing */
 }
 
+/* Footer paragraph */
 .footer p {
   line-height: 1.6;
 }
 
+/* Footer links */
 .footer ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer ul li {
@@ -88,12 +123,24 @@ body { background:#f8f8f8; color:#111; }
   text-decoration: underline;
 }
 
+/* Footer bottom section */
 .footer-bottom {
   text-align: center;
-  margin-top: 40px; /* thoda zyada space niche */
+  margin-top: 50px; /* Space from above */
   border-top: 1px solid #333;
   padding-top: 20px;
+  font-size: 13px;
 }
+
+/* Mobile responsive */
+@media(max-width:768px){
+  .footer-container{
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+
 
 /* Mobile responsive */
 @media(max-width:768px){
@@ -324,3 +371,96 @@ body { background:#f8f8f8; color:#111; }
   }
 }
 /* End of media queries */
+
+/* Account section */
+.account-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.account-section h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+.account-form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  width: 400px;
+}
+
+.account-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #007aff;
+}
+
+.account-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.account-form input[type="text"],
+.account-form input[type="email"],
+.account-form input[type="password"] {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.account-form .btn {
+  width: 100%;
+  padding: 12px;
+  background: #007aff;
+  color: #fff;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.account-form .btn:hover {
+  background: #005fca;
+}
+
+.remember-me {
+  margin-bottom: 20px;
+}
+
+.forgot-password, .privacy-note {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.account-form p a {
+  color: #007aff;
+  text-decoration: none;
+}
+
+.account-form p a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media(max-width:900px) {
+  .account-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .account-form {
+    width: 90%;
+  }
+}
