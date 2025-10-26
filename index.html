@@ -7,26 +7,37 @@
   <title>NockD – Style In Motion</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script src="script.js"></script>
+
 <body>
 
 
 
   <!-- HEADER button -->
-
-
-  <header class="navbar">
+<header>
+  <div class="navbar">
     <div class="logo">
       <img src="adil.jpg" alt="NockD Logo">
-      <span>ꜱᴛʏʟᴇ ɪɴ ᴍᴏᴛɪᴏ</span>
     </div>
-    <nav>
+
+    <!-- Hamburger for mobile -->
+    <div class="hamburger" onclick="toggleMenu()">
+      &#9776; <!-- simple hamburger icon -->
+    </div>
+
+    <nav class="nav-links">
       <a href="index.html" class="active">Home</a>
       <a href="men.html">Men</a>
       <a href="women.html">Women</a>
-      <a href="my-account.html">User</a>
-    
+      <a href="my-account.html">Logina</a>
     </nav>
-  </header>
+  </div>
+</header>
+
+<!-- Page content yaha aayega -->
+
+<!-- JS file include at the end of body -->
+<script src="script.js"></script>
 
 <!-- HERO BANNER -->
 <section class="hero">
