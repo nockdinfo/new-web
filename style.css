@@ -464,3 +464,33 @@ main {
     width: 90%;
   }
 }
+/* End of account section styling */
+
+/* FILE HEADER STYLING */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: #000;
+  color: white;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.account-icon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.account-icon img:hover {
+  transform: scale(1.1);
+}
+

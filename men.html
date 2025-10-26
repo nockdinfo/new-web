@@ -21,6 +21,7 @@
     <a href="index.html">Home</a>
     <a href="men.html" class="active">Men</a>
     <a href="women.html">Women</a>
+    <a href="my-account.html">User</a>
   </nav>
 </header>
 
@@ -52,9 +53,19 @@
     </div>
   </section>
 
-  <footer>
-    <p>© 2025 NockD – Style In Motion</p>
-  </footer>
+  <!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<!-- Include footer.html dynamically -->
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Footer load failed:', err));
+</script>
+ <!-- FOOTER END -->
 
 </body>
 </html>

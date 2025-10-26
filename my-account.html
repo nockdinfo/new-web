@@ -15,9 +15,10 @@
       <span>ꜱᴛʏʟᴇ ɪɴ ᴍᴏᴛɪᴏ</span>
     </div>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="index.html">Back To Home</a>
+      <!--<a href="index.html">Home</a>
       <a href="men.html">Men</a>
-      <a href="women.html">Women</a>
+      <a href="women.html">Women</a>-->
     </nav>
   </header>
 
@@ -61,43 +62,16 @@
       </div>
     </section>
   </main>
+ <!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>NockD</h3>
-        <p>From everyday essentials to bold statement pieces, NockD delivers thoughtfully curated styles that blend comfort, quality, and contemporary trends. Designed for your lifestyle, made to last.</p>
-      </div>
-      <div class="footer-shop">
-        <h3>Shop</h3>
-        <ul>
-          <li><a href="men.html">T-Shirts</a></li>
-          <li><a href="men.html">Hoodies</a></li>
-          <li><a href="men.html">Bottoms</a></li>
-        </ul>
-      </div>
-      <div class="footer-about-legal">
-        <h3>About & Legal</h3>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-customer">
-        <h3>Customer Service</h3>
-        <ul>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="#">Shipping Policy</a></li>
-          <li><a href="#">Track Order</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 NockD – Style In Motion</p>
-    </div>
-  </footer>
-
-</body>
-</html>
+<!-- Include footer.html dynamically -->
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Footer load failed:', err));
+</script>
+ <!-- FOOTER END -->

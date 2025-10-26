@@ -26,47 +26,23 @@
   <main class="page-container" style="text-align:center; padding:80px 20px;">
     <h1>Contact Us</h1>
     <p>For any questions or assistance, reach us at:</p>
-    <h2 style="margin-top:20px; color:#007aff;">+91 12345 67890</h2> <!-- tumhara number yaha -->
-    <p style="margin-top:10px;">or email: <a href="mailto:info@nockd.com">info@nockd.com</a></p>
+    <h2 style="margin-top:20px; color:#000000;">+91 81782 72159 , +91 8744068104</h2> <!-- Mera number yaha -->
+    <p style="margin-top:10px;">or email: <a href="mailto:info@nockd.com">nockd.info@gmail.com</a></p>  <!-- Mera email yaha -->
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-about">
-        <h3>NockD</h3>
-        <p>From everyday essentials to bold statement pieces, NockD delivers thoughtfully curated styles that blend comfort, quality, and contemporary trends. Designed for your lifestyle, made to last.</p>
-      </div>
-      <div class="footer-shop">
-        <h3>Shop</h3>
-        <ul>
-          <li><a href="men.html">T-Shirts</a></li>
-          <li><a href="men.html">Hoodies</a></li>
-          <li><a href="men.html">Bottoms</a></li>
-        </ul>
-      </div>
-      <div class="footer-about-legal">
-        <h3>About & Legal</h3>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-        </ul>
-      </div>
-      <div class="footer-customer">
-        <h3>Customer Service</h3>
-        <ul>
-          <li><a href="my-account.html">My Account</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
-          <li><a href="#">Shipping Policy</a></li>
-          <li><a href="#">Track Order</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>© 2025 NockD – Style In Motion</p>
-    </div>
-  </footer>
+   <!-- Footer placeholder -->
+<div id="footer-placeholder"></div>
+
+<!-- Include footer.html dynamically -->
+<script>
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+    })
+    .catch(err => console.error('Footer load failed:', err));
+</script>
+ <!-- FOOTER END -->
 
 </body>
 </html>
