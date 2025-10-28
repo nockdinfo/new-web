@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NockD Admin Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body{
+      background:#000;color:#fff;
+      font-family:'Poppins',sans-serif;
+      display:flex;justify-content:center;align-items:center;
+      height:100vh;
+    }
+    .login-box{
+      background:#111;padding:30px;border-radius:12px;
+      box-shadow:0 0 15px rgba(255,255,255,0.08);
+      width:340px;text-align:center;
+    }
+    input{width:100%;padding:10px;margin:10px 0;
+      border-radius:6px;border:1px solid #333;
+      background:#000;color:#fff;
+    }
+    button{
+      width:100%;background:#007aff;border:0;
+      padding:10px;border-radius:25px;color:#fff;
+      font-weight:600;cursor:pointer;
+    }
+    button:hover{background:#005fca}
+    .error{color:red;font-size:13px;display:none;}
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>NockD Admin</h2>
+    <p>Enter credentials to access dashboard</p>
+    <input id="email" type="text" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button id="loginBtn">Login</button>
+    <p id="error" class="error">Invalid email or password</p>
+  </div>
+
+   <!-- ✅ SCRIPT ALWAYS COMES AT THE END -->
+  <script src="admin.js"></script>
+
+  <script>
+    document.getElementById('loginBtn').onclick = ()=>{
+      const e = email.value.trim(), p = password.value.trim();
+      if(e==='nockd@gmail.com' && p===(localStorage.getItem('admin_pass')||'A@14912')){
+        localStorage.setItem('nockd_admin','true');
+        window.location='dashboard.html';
+      } else {
+        error.style.display='block';
+        setTimeout(()=>error.style.display='none',2000);
+      }
+    }
+  </script>
+</body>
+</html>
