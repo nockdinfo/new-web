@@ -6,67 +6,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NockD – Men’s Collection</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+  .btn {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px;
+    margin: 6px 4px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+    font-size: 15px;
+  }
+
+  .btn:hover {
+    background-color: #ddd;
+  }
+
+  .product-card {
+    background: #1a1a1a;
+    border-radius: 10px;
+    padding: 18px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .product-card img {
+    width: 100%;
+    border-radius: 10px;
+    height: 350px;
+    object-fit: cover;
+  }
+
+  .product-card h3 {
+    font-size: 19px;
+    margin: 8px 0 4px;
+  }
+
+  .product-card p {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  /* Cart icon badge */
+  .cart-icon {
+    position: relative;
+    display: inline-block;
+    margin-left: 10px;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background-color: #ff4d4d;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    padding: 2px 6px;
+  }
+  </style>
 </head>
 <body>
 
   <!-- HEADER -->
   <header class="navbar">
-  <div class="logo">
-    <img src="adil.jpg" alt="NockD Logo">
-
-  </div>
-
-  <nav>
-    <a href="index.html">Back</a>
-    <a href="index.html">Home</a>
-    <a href="men.html" class="active">Men</a>
-    <a href="women.html">Women</a>
-    <a href="my-account.html">login</a>
-  </nav>
-</header>
-
+    <div class="logo">
+      <img src="adil.jpg" alt="NockD Logo">
+    </div>
+    <nav>
+      <a href="index.html">Back</a>
+      <a href="index.html">Home</a>
+      <a href="men.html" class="active">Men</a>
+      <a href="women.html">Women</a>
+      <a href="cart.html" class="cart-icon">
+        🛒 <span id="cart-count" class="cart-count">0</span>
+      </a>
+      <a href="my-account.html">Login</a>
+    </nav>
+  </header>
 
   <!-- HERO -->
   <section class="hero men-hero">
     <div class="hero-content">
-      <h1>NockD → Men’s section</h1>
-      <p>Redefine your style with our premium men’s wear.</p>
+      <h1>NockD → Men’s Section</h1>
+      <p>Redefine Your Edge With Premium Styles Crafted For The Modern Man.</p>
     </div>
   </section>
 
   <!-- PRODUCTS GRID -->
   <section class="product-grid">
     <div class="product-card">
-      <img src="danish1.jpg" alt="Black Tee">
-      <h3>Oversized Black Tee</h3>
+      <img src="Hoodie.jpg" alt="Hoodie">
+      <h3>NockD Oversized Hoodie</h3>
       <p>₹799</p>
+      <button class="btn" onclick="buyNow('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Add to Cart</button>
     </div>
     <div class="product-card">
-      <img src="danish2.jpg" alt="Denim Shirt">
-      <h3>Denim Shirt</h3>
+      <img src="Hoodie.jpg" alt="Hoodie">
+      <h3>NockD Oversized Hoodie</h3>
+      <p>₹799</p>
+      <button class="btn" onclick="buyNow('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Hoodie.jpg" alt="Hoodie">
+      <h3>NockD Oversized Hoodie</h3>
+      <p>₹799</p>
+      <button class="btn" onclick="buyNow('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="Hoodie.jpg" alt="Hoodie">
+      <h3>NockD Oversized Hoodie</h3>
+      <p>₹799</p>
+      <button class="btn" onclick="buyNow('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Oversized Hoodie', 799, 'Men', 'Hoodie')">Add to Cart</button>
+    </div>
+
+
+    <div class="product-card">
+      <img src="shirt1.jpg" alt="Regular Fit Shirt">
+      <h3>NockD Regular Fit Shirt</h3>
       <p>₹999</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Add to Cart</button>
     </div>
     <div class="product-card">
-      <img src="firoz3.jpg" alt="Jeans">
-      <h3>Regular Fit Jeans</h3>
+      <img src="shirt1.jpg" alt="Regular Fit Shirt">
+      <h3>NockD Regular Fit Shirt</h3>
+      <p>₹999</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="shirt1.jpg" alt="Regular Fit Shirt">
+      <h3>NockD Regular Fit Shirt</h3>
+      <p>₹999</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="shirt1.jpg" alt="Regular Fit Shirt">
+      <h3>NockD Regular Fit Shirt</h3>
+      <p>₹999</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Shirt', 999, 'Men', 'Shirt')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="jines1.jpg" alt="Regular Fit Jeans">
+      <h3>NockD Regular Fit Jeans</h3>
       <p>₹1199</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="jines1.jpg" alt="Regular Fit Jeans">
+      <h3>NockD Regular Fit Jeans</h3>
+      <p>₹1199</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="jines1.jpg" alt="Regular Fit Jeans">
+      <h3>NockD Regular Fit Jeans</h3>
+      <p>₹1199</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+      <img src="jines1.jpg" alt="Regular Fit Jeans">
+      <h3>NockD Regular Fit Jeans</h3>
+      <p>₹1199</p>
+      <button class="btn" onclick="buyNow('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Buy Now</button>
+      <button class="btn" onclick="addToCart('NockD Regular Fit Jeans', 1199, 'Men', 'Jeans')">Add to Cart</button>
     </div>
   </section>
-  <!-- end -->
-   
-  <!-- Footer placeholder -->
-<div id="footer-placeholder"></div>
 
-<!-- Include footer.html dynamically -->
-<script>
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(err => console.error('Footer load failed:', err));
-</script>
- <!-- FOOTER END -->
+  <!-- FOOTER -->
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(res => res.text())
+      .then(data => document.getElementById('footer-placeholder').innerHTML = data)
+      .catch(err => console.error('Footer load failed:', err));
+  </script>
+
+  <!-- CART & BUY SCRIPT -->
+  <script>
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('nockd_cart') || '[]');
+      document.getElementById('cart-count').textContent = cart.length;
+    }
+
+    function buyNow(name, price, category, caption) {
+      const product = { name, price, category, caption };
+      localStorage.setItem('checkout_product', JSON.stringify(product));
+      window.location.href = 'checkout.html';
+    }
+
+    function addToCart(name, price, category, caption) {
+      const cart = JSON.parse(localStorage.getItem('nockd_cart') || '[]');
+      cart.push({ name, price, category, caption });
+      localStorage.setItem('nockd_cart', JSON.stringify(cart));
+      updateCartCount();
+      alert(`${name} added to cart!`);
+    }
+
+    updateCartCount();
+  </script>
 
 </body>
 </html>

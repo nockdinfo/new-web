@@ -1,12 +1,138 @@
-<main class="page-container" style="max-width:700px; margin:80px auto; text-align:center; line-height:1.6;">
-  <section class="about-section">
-    <h1 style="font-size:36px; margin-bottom:20px;">About NockD</h1>
-    <p>NockD is more than just fashion — it’s a movement of comfort, confidence, and creativity.
-We craft streetwear that blends everyday ease with bold individuality, designed to keep you moving in style.</p>
-    <p>From timeless basics to trend-driven statements, every NockD piece reflects our commitment to quality and innovation.
-Made for those who live with purpose, passion, and motion — NockD defines your style, your way.</p>
-  
-</section>
-</main>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About – NockD</title>
 
- 
+  <!-- Google Fonts (same as Privacy Policy) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      background-color: #111;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ===== HEADER ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background-color: #000;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .navbar .logo img {
+      height: 40px;
+      border-radius: 4px;
+    }
+
+    .navbar span {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: #aaa;
+    }
+
+    /* Navbar links */
+    .navbar nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .navbar nav a:hover {
+      color: #bbb;
+    }
+
+    /* ===== MAIN SECTION ===== */
+    main {
+      max-width: 800px;
+      margin: 100px auto; /* same as other pages */
+      padding: 0 20px;
+    }
+
+    .about-section {
+      text-align: left;
+      line-height: 1.9;
+      color: #ccc;
+    }
+
+    .about-section h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      margin-bottom: 20px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #000;
+      color: #ccc;
+      padding: 60px 40px;
+      text-align: center;
+      font-size: 15px;
+      border-top: 1px solid #222;
+      margin-top: 80px;
+    }
+
+    footer span {
+      color: #fff;
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="adil.jpg" alt="NockD Logo">
+      <span>ꜱᴛʏʟᴇ ɪɴ ᴍᴏᴛɪᴏɴ</span>
+    </div>
+    <nav>
+      <a href="index.html">Back To Home</a>
+    </nav>
+  </header>
+
+  <!-- ABOUT CONTENT -->
+  <main>
+    <section class="about-section">
+      <h1>About NockD</h1>
+      <p>NockD is more than just fashion — it’s a movement of comfort, confidence, and creativity. We craft streetwear that blends everyday ease with bold individuality, designed to keep you moving in style.</p>
+      <p>From timeless basics to trend-driven statements, every NockD piece reflects our commitment to quality and innovation. Made for those who live with purpose, passion, and motion — NockD defines your style, your way.</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 <span>NockD</span> – Style In Motion
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart – NockD</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #0e0e0e;
+      color: #fff;
+      font-family: 'Poppins', Arial, sans-serif;
+      text-align: center;
+      padding: 40px 15px 80px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    #cart-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-item {
+      background: #1a1a1a;
+      padding: 18px;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.05);
+      transition: 0.3s ease;
+    }
+
+    .cart-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px rgba(255,255,255,0.08);
+    }
+
+    .cart-item strong {
+      font-size: 18px;
+      display: block;
+      margin-bottom: 5px;
+      color: #fff;
+    }
+
+    .cart-item p {
+      margin: 2px 0;
+      color: #ccc;
+      font-size: 15px;
+    }
+
+    .btn {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      padding: 10px 22px;
+      margin: 15px 6px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 15px;
+    }
+
+    .btn:hover {
+      background-color: #ddd;
+    }
+
+    .empty {
+      margin-top: 60px;
+      font-size: 18px;
+      color: #aaa;
+    }
+
+    .action-buttons {
+      margin-top: 25px;
+    }
+
+    a.btn {
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Your Cart</h1>
+  <div id="cart-container"></div>
+
+  <div class="action-buttons">
+    <button class="btn" onclick="clearCart()">Clear Cart</button>
+    <a href="index.html" class="btn">Back Home</a>
+  </div>
+
+  <script>
+    function loadCart() {
+      let cart = localStorage.getItem('nockd_cart');
+      const container = document.getElementById('cart-container');
+
+      if (!cart) {
+        container.innerHTML = '<p class="empty">Your cart is empty.</p>';
+        return;
+      }
+
+      cart = JSON.parse(cart);
+      if (cart.length === 0) {
+        container.innerHTML = '<p class="empty">Your cart is empty.</p>';
+        return;
+      }
+
+      container.innerHTML = '';
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+          <strong>${item.name}</strong>
+          <p>₹${item.price}</p>
+          <p>${item.category}</p>
+        `;
+        container.appendChild(div);
+      });
+    }
+
+    function clearCart() {
+      localStorage.removeItem('nockd_cart');
+      alert('Cart cleared!');
+      loadCart();
+    }
+
+    loadCart();
+  </script>
+
+</body>
+</html>

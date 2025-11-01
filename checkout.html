@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout – NockD</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .checkout-box {
+      background: #1a1a1a;
+      padding: 25px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: none;
+    }
+    button {
+      width: 100%;
+      margin-top: 15px;
+      background-color: #fff;
+      color: #000;
+      font-weight: 600;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="checkout-box">
+    <h2>Checkout</h2>
+    <p id="product-info"></p>
+
+    <form id="checkout-form">
+      <label>Full Name</label>
+      <input type="text" id="name" required>
+
+      <label>Phone Number</label>
+      <input type="tel" id="phone" required>
+
+      <label>Address</label>
+      <textarea id="address" rows="3" required></textarea>
+
+      <label>Pincode</label>
+      <input type="text" id="pincode" required>
+
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+
+  <script>
+    // Product info display
+    const product = JSON.parse(localStorage.getItem('checkout_product') || '{}');
+    if (product.name) {
+      document.getElementById('product-info').innerHTML =
+        `<strong>Product:</strong> ${product.name}<br>
+         <strong>Price:</strong> ₹${product.price}<br>
+         <strong>Category:</strong> ${product.category}<br>
+         <strong>Type:</strong> ${product.caption}`;
+    } else {
+      document.getElementById('product-info').innerText = 'No product selected.';
+    }
+
+    // Handle checkout form
+    document.getElementById('checkout-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+
+      if (!name || !phone || !address) {
+        alert('Please fill all fields!');
+        return;
+      }
+
+      const order = {
+        ...product,
+        name,
+        phone,
+        address,
+        date: new Date().toLocaleString()
+      };
+
+      const orders = JSON.parse(localStorage.getItem('nockd_orders') || '[]');
+      orders.push(order);
+      localStorage.setItem('nockd_orders', JSON.stringify(orders));
+
+      alert('Order placed successfully!');
+      localStorage.removeItem('checkout_product');
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>
