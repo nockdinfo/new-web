@@ -1,125 +1,155 @@
-<!-- FILE: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>NockD – Style In Motion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+  
+  <!-- Google Fonts: Playfair Display only for NockD -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  
   <style>
-.cart-icon {
-  position: relative;
-  display: inline-block;
-  margin-left: 10px;
-}
-.cart-count {
-  position: absolute;
-  top: -6px;
-  right: -10px;
-  background-color: #ff4d4d;
-  color: white;
-  border-radius: 50%;
-  font-size: 12px;
-  padding: 2px 6px;
-}
-</style>
+    /* Existing styles */
+    .cart-icon {
+      position: relative;
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .cart-count {
+      position: absolute;
+      top: -6px;
+      right: -10px;
+      background-color: #ff4d4d;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      padding: 2px 6px;
+    }
+    
+    /* Updated NockD logo style with Playfair Display */
+    .nockd-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 35px;
+      color: #f5f6f7;         /* light gray */
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      user-select: none;
+      margin-left: 10px; /* space from logo image */
+      display: inline-block;
+      vertical-align: middle;
+      transition: color 0.3s ease;
+    }
+    .nockd-logo:hover {
+      color: #aabbce;         /* dark blue on hover */
+      cursor: pointer;
+    }
 
+    /* Basic navbar style for alignment */
+    .navbar {
+      display: flex;
+      align-items: center;
+      background-color: #222; /* example dark bg */
+      padding: 10px 20px;
+      color: white;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 50px;
+      width: auto;
+    }
+  </style>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<script src="script.js"></script>
 
 <body>
 
-
-
   <!-- HEADER button -->
-<header>
-  <div class="navbar">
-    <div class="logo">
-      <img src="adil.jpg" alt="NockD Logo">
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <img src="Nockd-logo.jpg" alt="NockD Logo" />
+        <span class="nockd-logo">Nockd</span>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <div class="hamburger" onclick="toggleMenu()">
+        &#9776; <!-- simple hamburger icon -->
+      </div>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="men.html">Men</a>
+        <a href="women.html">Women</a>
+        <a href="cart.html" class="cart-icon">
+          🛒 <span id="cart-count" class="cart-count">0</span>
+        </a>
+        <a href="my-account.html">Login</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- Hamburger for mobile -->
-    <div class="hamburger" onclick="toggleMenu()">
-      &#9776; <!-- simple hamburger icon -->
+  <!-- Page content yaha aayega -->
+
+  <!-- JS file include at the end of body -->
+  <script src="script.js"></script>
+
+  <!-- HERO BANNER -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Your Style</h1>
+      <p>Explore premium streetwear for Men & Women.</p>
+      <div class="hero-buttons">
+        <a href="men.html" class="btn">NockD Collection</a> <!-- men collection add html-->
+        <a href="women.html" class="btn">Velra Collection</a> <!-- women collection add html-->
+      </div>
     </div>
-
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a>
-      <a href="men.html">Men</a>
-      <a href="women.html">Women</a>
-      <a href="cart.html" class="cart-icon">
-        🛒 <span id="cart-count" class="cart-count">0</span>
-      </a>
-      <a href="my-account.html">Login</a>
-    </nav>
-  </div>
-</header>
-
-<!-- Page content yaha aayega -->
-
-<!-- JS file include at the end of body -->
-<script src="script.js"></script>
-
-<!-- HERO BANNER -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Discover Your Style</h1>
-    <p>Explore premium streetwear for Men & Women.</p>
-    <div class="hero-buttons">
-      <a href="men.html" class="btn">NockD Collection</a> <!-- men collection add html-->
-      <a href="women.html" class="btn">Velra Collection</a>   <!-- women collection add html-->
-    </div>
-  </div>
-</section>
-
+  </section>
 
   <!-- FEATURED COLLECTIONS -->
 
-<section class="collections">
-  <h2>Our Collections</h2>
-  <div class="collection-grid">
+  <section class="collections">
+    <h2>Our Collections</h2>
+    <div class="collection-grid">
+      <!-- MEN COLLECTION -->
+      <a href="men.html" class="collection-card">
+        <img src="Nockd-S-img-4.jpg" alt="NockD Collection" />
+        <h3>NockD Collection</h3>
+      </a>
 
+      <!-- WOMEN COLLECTION -->
+      <a href="women.html" class="collection-card">
+        <img src="velra.jpg" alt="Velra Collection" />
+        <h3>Velra Collection</h3>
+      </a>
+    </div>
+  </section>
 
-    <!-- MEN COLLECTION -->
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
 
-    <a href="men.html" class="collection-card">
-      <img src="nockd.jpg" alt="NockD Collection">
-      <h3>NockD Collection</h3>
-    </a>
+  <!-- Include footer.html dynamically -->
+  <script>
+    fetch('footer.html')
+      .then((response) => response.text())
+      .then((data) => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch((err) => console.error('Footer load failed:', err));
+  </script>
 
-    <!-- WOMEN COLLECTION -->
-     
-    <a href="women.html" class="collection-card">
-      <img src="velra.jpg" alt="Velra Collection">
-      <h3>Velra Collection</h3>
-    </a>
-  </div>
-</section>
- <!-- Footer placeholder -->
-<div id="footer-placeholder"></div>
-
-<!-- Include footer.html dynamically -->
-<script>
-  fetch('footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    })
-    .catch(err => console.error('Footer load failed:', err));
-    
-</script>
- <!-- FOOTER END -->
-<script>
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem('nockd_cart') || '[]');
-    const countEl = document.getElementById('cart-count');
-    if (countEl) countEl.textContent = cart.length;
-  }
-  updateCartCount();
-</script>
-
- <!-- END -->
-
-
+  <!-- Cart count update -->
+  <script>
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('nockd_cart') || '[]');
+      const countEl = document.getElementById('cart-count');
+      if (countEl) countEl.textContent = cart.length;
+    }
+    updateCartCount();
+  </script>
+</body>
+</html>

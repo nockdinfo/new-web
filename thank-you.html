@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You – NockD</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .thankyou-box {
+      background: #1a1a1a;
+      padding: 40px 30px;
+      border-radius: 14px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.05);
+      max-width: 420px;
+      width: 90%;
+      animation: pop 0.5s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.8); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .thankyou-box h1 {
+      font-size: 28px;
+      color: #00ffb3;
+      margin-bottom: 12px;
+    }
+
+    .thankyou-box p {
+      font-size: 17px;
+      color: #ccc;
+      margin-bottom: 20px;
+    }
+
+    .order-id {
+      font-size: 18px;
+      background: #fff;
+      color: #000;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      display: inline-block;
+    }
+
+    .btn {
+      margin-top: 30px;
+      background: #fff;
+      color: #000;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 10px;
+      color: #777;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="thankyou-box">
+    <h1>✅ Thank You!</h1>
+    <p>Your order has been placed successfully.</p>
+    <p>Your Order ID:</p>
+   <!--<div class="order-id" id="order-id">Loading...</div>-->
+
+    <a href="index.html" class="btn">Back to Home</a>
+  </div>
+
+  <script>
+    const orders = JSON.parse(localStorage.getItem('nockd_orders') || '[]');
+    const lastOrder = orders[orders.length - 1];
+    if (lastOrder) {
+      document.getElementById('order-id').textContent = lastOrder.id;
+    } else {
+      document.getElementById('order-id').textContent = 'Order Not Found';
+    }
+
+</body>
+</html>

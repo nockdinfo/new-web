@@ -38,7 +38,7 @@ p, a, li, span {
   align-items: center;
   padding: 10px 40px;
   background-color: #000;
-  color: rgb(243, 0, 0);
+  color: rgb(255, 2, 2);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -142,7 +142,7 @@ p, a, li, span {
 }
 
 .btn {
-  background:#007aff;
+  background:#0f73dd;
   color:#fff;
   padding:10px 25px;
   border-radius:25px;
